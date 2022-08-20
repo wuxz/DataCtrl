@@ -1,0 +1,17 @@
+ 
+// Commands (ID_* and IDM_*) 
+// Prompts (IDP_*) 
+// Resources (IDR_*) 
+// Dialogs (IDD_*) 
+HIDD_ABOUTBOX_BHMDBGRID                 0x20001
+HIDD_ABOUTBOX_BHMDBDROPDOWN             0x20002
+HIDD_ABOUTBOX_BHMDBCOMBO                0x20003
+HIDD_PROPPAGE_BHMDBGRID                 0x200C8
+HIDD_PROPPAGE_BHMDBDROPDOWN             0x200C9
+HIDD_PROPPAGE_BHMDBCOMBO                0x200CA
+HIDD_DIALOG_GRIDINPUT                   0x200CC
+HIDD_DIALOG_FIELDS                      0x200CD
+HIDD_DIALOG_ADDCOLUMN                   0x200CE
+HIDD_PROPPAGE_BHMRICHGRID_COLUMN        0x200CF
+HIDD_PROPPAGE_BHMRICHGRID_GROUP         0x200D0
+// Frame Controls (IDW_*) 

@@ -1,0 +1,875 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "1 TYPELIB ""BHMData.tlb""\r\n"
+    "#include ""afxctl.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,1
+ PRODUCTVERSION 2,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "BHM\0"
+            VALUE "FileDescription", "BHMData ActiveX Control Module\0"
+            VALUE "FileVersion", "2, 0, 0, 1\0"
+            VALUE "InternalName", "BHMData\0"
+            VALUE "LegalCopyright", "Copyright (C) 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OLESelfRegister", "\0"
+            VALUE "OriginalFilename", "BHMData.OCX\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "BHMData ActiveX Control Module\0"
+            VALUE "ProductVersion", "2, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ABOUTDLL            ICON    DISCARDABLE     "BHMData.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BHMDBGRID           BITMAP  DISCARDABLE     "BHMDBGridCtl.bmp"
+IDB_BHMDBDROPDOWN       BITMAP  DISCARDABLE     "BHMDBDropDownCtl.bmp"
+IDB_BHMDBCOMBO          BITMAP  DISCARDABLE     "BHMDBComboCtl.bmp"
+IDB_BITMAP_DOWNARROW    BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_HEADER              BITMAP  DISCARDABLE     "Header.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX_BHMDBGRID DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BHMDBGrid Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         IDI_ABOUTDLL,IDC_STATIC,"Static",SS_BITMAP,10,10,20,20
+    LTEXT           "BHMDBGrid Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 1999, BHM",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_BHMDBDROPDOWN DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BHMDBDropDown Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         2,IDC_STATIC,"Static",SS_BITMAP,10,10,20,20
+    LTEXT           "BHMDBDropDown Control, Version 1.0",IDC_STATIC,40,10,
+                    170,8
+    LTEXT           "Copyright (C) 1999, BHM",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_ABOUTBOX_BHMDBCOMBO DIALOG DISCARDABLE  34, 22, 260, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BHMDBCombo Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         3,IDC_STATIC,"Static",SS_BITMAP,10,10,20,20
+    LTEXT           "BHMDBCombo Control, Version 1.0",IDC_STATIC,40,10,170,8
+    LTEXT           "Copyright (C) 1999, BHM",IDC_STATIC,40,25,170,8
+    DEFPUSHBUTTON   "OK",IDOK,221,7,32,14,WS_GROUP
+END
+
+IDD_DIALOG_ADDCOLUMN DIALOG DISCARDABLE  0, 0, 182, 61
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Column"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_COLUMNNAME,22,26,75,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,125,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,125,24,50,14
+    GROUPBOX        "Column Name",IDC_STATIC,7,7,103,47
+END
+
+IDD_DIALOG_FIELDS DIALOG DISCARDABLE  0, 0, 187, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Fields"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    LISTBOX         IDC_LIST_FIELDS,7,22,109,72,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Fields:",IDC_STATIC,7,7,29,8
+END
+
+IDD_DIALOG_GRIDINPUT DIALOG DISCARDABLE  0, 0, 211, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,49,139,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,139,50,14
+    CONTROL         "Custom1",IDC_GRID_INPUT,"BHM_GridClass",WS_TABSTOP,13,
+                    17,184,118
+END
+
+IDD_PROPPAGE_BHMRICHGRID_COLUMN DIALOG DISCARDABLE  0, 0, 416, 256
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Add Column...",IDC_BUTTON_ADDCOLUMN,26,25,59,16,
+                    BS_NOTIFY | WS_GROUP
+    PUSHBUTTON      "&Delete Column",IDC_BUTTON_DELETECOLUMN,26,61,59,16,
+                    WS_GROUP
+    PUSHBUTTON      "&Reset",IDC_BUTTON_RESET,26,97,59,16,WS_GROUP
+    PUSHBUTTON      "&Fields...",IDC_BUTTON_FIELDS,25,133,59,16,WS_GROUP
+    COMBOBOX        IDC_COMBO_COLUMN,128,25,77,96,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LISTBOX         IDC_LIST_PROPERTY,127,61,82,89,LBS_USETABSTOPS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_GROUP | 
+                    WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC_FRAME,217,23,173,127,WS_GROUP
+    CONTROL         "&Left",IDC_RADIO_ALIGNMENT_LEFT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,283,53,44,
+                    14
+    CONTROL         "&Right",IDC_RADIO_ALIGNMENT_RIGHT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,283,83,44,14
+    CONTROL         "&Center",IDC_RADIO_ALIGNMENT_CENTER,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,283,113,44,14
+    CONTROL         "Allow Si&zing",IDC_CHECK_ALLOWSIZING,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,
+                    276,82,64,16
+    EDITTEXT        IDC_EDIT_CAPTION,279,79,53,16,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_GROUP
+    CONTROL         "&Left",IDC_RADIO_CAPTIONALIGNMENT_LEFT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,279,49,60,
+                    14
+    CONTROL         "&Right",IDC_RADIO_CAPTIONALIGNMENT_RIGHT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,279,71,60,14
+    CONTROL         "&Center",IDC_RADIO_CAPTIONALIGNMENT_CENTER,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,279,95,60,14
+    CONTROL         "As Ali&gnment",IDC_RADIO_CAPTIONALIGNMENT_ASALIGNMENT,
+                    "Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,279,119,60,
+                    14
+    CONTROL         "&None",IDC_RADIO_CASE_NONE,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,285,52,40,13
+    CONTROL         "&Upper",IDC_RADIO_CASE_UPPER,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,285,81,40,13
+    CONTROL         "&Lower",IDC_RADIO_CASE_LOWER,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,285,110,40,13
+    COMBOBOX        IDC_COMBO_DATAFIELD,275,81,62,112,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Ch&oose a color...",IDC_BUTTON_BACKCOLOR,271,78,75,19,
+                    NOT WS_VISIBLE | WS_GROUP
+    PUSHBUTTON      "Ch&oose a color...",IDC_BUTTON_FORECOLOR,271,78,75,19,
+                    NOT WS_VISIBLE | WS_GROUP
+    PUSHBUTTON      "Ch&oose a color...",IDC_BUTTON_HEADBACKCOLOR,271,78,75,
+                    19,NOT WS_VISIBLE | WS_GROUP
+    PUSHBUTTON      "Ch&oose a color...",IDC_BUTTON_HEADFORECOLOR,271,78,75,
+                    19,NOT WS_VISIBLE | WS_GROUP
+    EDITTEXT        IDC_EDIT_FIELDLEN,278,80,53,16,ES_AUTOHSCROLL | 
+                    ES_NUMBER | NOT WS_VISIBLE | WS_GROUP
+    CONTROL         "Loc&ked",IDC_CHECK_LOCKED,"Button",BS_AUTOCHECKBOX | 
+                    BS_NOTIFY | NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,285,
+                    79,45,18
+    CONTROL         "&Text",IDC_RADIO_DATATYPE_TEXT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,240,42,46,
+                    17
+    CONTROL         "&Boolean",IDC_RADIO_DATATYPE_BOOLEAN,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,240,68,46,17
+    CONTROL         "B&yte",IDC_RADIO_DATATYPE_BYTE,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,240,94,46,17
+    CONTROL         "&Integer",IDC_RADIO_DATATYPE_INTEGER,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,240,120,46,17
+    CONTROL         "&Long",IDC_RADIO_DATATYPE_LONG,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,326,42,46,17
+    CONTROL         "&Single",IDC_RADIO_DATATYPE_SINGLE,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,326,68,46,17
+    CONTROL         "C&urrency",IDC_RADIO_DATATYPE_CURRENCY,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,326,94,46,17
+    CONTROL         "&Date",IDC_RADIO_DATATYPE_DATE,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,326,120,37,17
+    EDITTEXT        IDC_EDIT_MASK,279,79,53,16,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_GROUP
+    EDITTEXT        IDC_EDIT_NAME,279,79,53,16,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_GROUP
+    CONTROL         "&Nullable",IDC_CHECK_NULLABLE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,283,82,51,19
+    EDITTEXT        IDC_EDIT_PROMPTCHAR,279,79,53,16,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | WS_GROUP
+    CONTROL         "&Edit",IDC_RADIO_STYLE_EDIT,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,227,39,31,17
+    CONTROL         "Co&mboBox",IDC_RADIO_STYLE_COMBOBOX,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,278,59,46,17
+    CONTROL         "Combo&List",IDC_RADIO_STYLE_COMBOLIST,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,329,59,49,17
+    CONTROL         "&DateMask",IDC_RADIO_STYLE_DATEMASK,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,278,39,46,17
+    CONTROL         "&CheckBox",IDC_RADIO_STYLE_CHECKBOX,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,227,59,46,17
+    CONTROL         "Edit &Button",IDC_RADIO_STYLE_EDITBUTTON,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,329,39,60,17
+    CONTROL         "B&utton",IDC_RADIO_STYLE_BUTTON,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,227,80,39,17
+    CONTROL         "N&umeric",IDC_RADIO_STYLE_NUMERIC,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,278,80,46,17
+    LTEXT           "Mask",IDC_STATIC_DATEMASK,283,109,21,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_DATEMASK,283,125,52,123,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Choice LIst...",IDC_BUTTON_SETUPCOMBOBOX,277,116,62,17,
+                    NOT WS_VISIBLE | WS_GROUP
+    CONTROL         "&Visible",IDC_CHECK_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,283,82,51,19
+    EDITTEXT        IDC_EDIT_WIDTH,278,80,53,16,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE | WS_GROUP
+    CONTROL         "Custom1",IDC_GRID,"BHM_GridClass",WS_TABSTOP,26,159,364,
+                    92
+    CONTROL         "Prompt&Include",IDC_CHECK_PROMPTINCLUDE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_GROUP | WS_TABSTOP,
+                    276,82,64,16
+    LTEXT           "Columns:",IDC_STATIC,129,14,52,8
+    LTEXT           "Properties:",IDC_STATIC,127,50,52,8
+END
+
+IDD_PROPPAGE_BHMDBCOMBO DIALOG DISCARDABLE  0, 0, 308, 231
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Gro&upHeader",IDC_CHECK_GROUPHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,17,16,112,10
+    CONTROL         "Column&Header",IDC_CHECK_COLUMNHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,17,38,112,10
+    CONTROL         "ListAuto&Position",IDC_CHECK_LISTAUTOPOSITION,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,17,60,112,10
+    CONTROL         "ListWidthAuto&Size",IDC_CHECK_LISTWIDTHAUTOSIZE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,17,82,112,10
+    CONTROL         "ReadOnl&y",IDC_CHECK_READONLY,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,17,104,112,10
+    LTEXT           "&BorderStyle",IDC_STATIC,17,126,48,8
+    COMBOBOX        IDC_COMBO_BORDERSTYLE,70,124,62,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Da&taMode",IDC_STATIC,17,146,34,8
+    COMBOBOX        IDC_COMBO_DATAMODE,70,144,62,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Di&viderStyle",IDC_STATIC,17,166,50,8
+    COMBOBOX        IDC_COMBO_DIVIDERSTYLE,70,164,62,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Divid&erType",IDC_STATIC,17,186,48,8
+    COMBOBOX        IDC_COMBO_DIVIDERTYPE,70,184,62,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Style",IDC_STATIC,17,206,34,8
+    COMBOBOX        IDC_COMBO_STYLE,70,204,62,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Format",IDC_STATIC,147,15,37,8
+    EDITTEXT        IDC_EDIT_FORMAT,223,15,62,12,ES_AUTOHSCROLL
+    LTEXT           "Ro&ws",IDC_STATIC,147,32,20,13
+    EDITTEXT        IDC_EDIT_ROWS,223,33,62,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_ROWS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,290,31,12,12
+    LTEXT           "Co&ls",IDC_STATIC,147,54,20,13
+    EDITTEXT        IDC_EDIT_COLS,223,55,62,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_COLS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,289,57,12,12
+    LTEXT           "Ma&xDropDownItems",IDC_STATIC,147,76,70,13
+    EDITTEXT        IDC_EDIT_MAXDROPDOWNITEMS,223,75,62,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_MAXDROPDOWNITEMS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,291,69,12,12
+    LTEXT           "&MinDropDownItems",IDC_STATIC,147,98,70,13
+    EDITTEXT        IDC_EDIT_MINDROPDOWNITEMS,223,96,62,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_MINDROPDOWNITEMS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,289,93,12,12
+    LTEXT           "DefColW&idth",IDC_STATIC,147,120,49,8
+    EDITTEXT        IDC_EDIT_DEFCOLWIDTH,223,116,62,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "HeaderHei&ght",IDC_STATIC,147,137,50,8
+    EDITTEXT        IDC_EDIT_HEADERHEIGHT,223,135,62,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "&RowHeight",IDC_STATIC,147,154,36,8
+    EDITTEXT        IDC_EDIT_ROWHEIGHT,223,153,62,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "ListWidth",IDC_STATIC,147,171,65,8
+    EDITTEXT        IDC_EDIT_LISTWIDTH,223,169,62,12,ES_AUTOHSCROLL
+    LTEXT           "&FieldSeparator",IDC_STATIC,147,188,56,8
+    EDITTEXT        IDC_EDIT_FIELDSEPARATOR,223,186,62,12,ES_AUTOHSCROLL
+    LTEXT           "MaxLength",IDC_STATIC,147,205,65,8
+    EDITTEXT        IDC_EDIT_MAXLENGTH,223,204,62,12,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_BHMDBDROPDOWN DIALOG DISCARDABLE  0, 0, 308, 212
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Gro&upHeader",IDC_CHECK_GROUPHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,22,115,10
+    CONTROL         "Column&Header",IDC_CHECK_COLUMNHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,43,115,10
+    CONTROL         "ListAuto&Position",IDC_CHECK_LISTAUTOPOSITION,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,64,115,10
+    CONTROL         "ListWidthAuto&Size",IDC_CHECK_LISTWIDTHAUTOSIZE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,18,85,115,10
+    LTEXT           "DividerStyle",IDC_STATIC,18,106,54,8
+    COMBOBOX        IDC_COMBO_DIVIDERSTYLE,79,103,53,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DividerType",IDC_STATIC,18,125,48,8
+    COMBOBOX        IDC_COMBO_DIVIDERTYPE,79,123,53,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&BorderStyle",IDC_STATIC,18,144,48,8
+    COMBOBOX        IDC_COMBO_BORDERSTYLE,79,142,53,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Da&taMode",IDC_STATIC,18,163,34,8
+    COMBOBOX        IDC_COMBO_DATAMODE,79,162,53,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&FieldSeparator",IDC_STATIC,18,182,58,8
+    EDITTEXT        IDC_EDIT_FIELDSEPARATOR,79,180,53,12,ES_AUTOHSCROLL
+    LTEXT           "Ro&ws",IDC_STATIC,147,27,20,13
+    EDITTEXT        IDC_EDIT_ROWS,243,24,46,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_ROWS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,283,20,12,12
+    LTEXT           "Co&ls",IDC_STATIC,147,51,20,13
+    EDITTEXT        IDC_EDIT_COLS,243,48,46,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_COLS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,283,41,12,12
+    LTEXT           "Ma&xDropDownItems",IDC_STATIC,147,75,70,13
+    EDITTEXT        IDC_EDIT_MAXDROPDOWNITEMS,243,71,46,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_MAXDROPDOWNITEMS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,283,56,12,12
+    LTEXT           "&MinDropDownItems",IDC_STATIC,147,99,70,13
+    EDITTEXT        IDC_EDIT_MINDROPDOWNITEMS,243,96,46,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_MINDROPDOWNITEMS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,283,85,12,12
+    LTEXT           "DefColW&idth",IDC_STATIC,147,123,49,8
+    EDITTEXT        IDC_EDIT_DEFCOLWIDTH,224,122,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "HeaderHei&ght",IDC_STATIC,147,142,50,8
+    EDITTEXT        IDC_EDIT_HEADERHEIGHT,224,141,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "&RowHeight",IDC_STATIC,147,161,36,8
+    EDITTEXT        IDC_EDIT_ROWHEIGHT,224,159,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "ListWidth",IDC_STATIC,147,180,65,8
+    EDITTEXT        IDC_EDIT_LISTWIDTH,224,179,65,14,ES_AUTOHSCROLL
+END
+
+IDD_PROPPAGE_BHMDBGRID DIALOG DISCARDABLE  0, 0, 319, 249
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Da&taMode",IDC_STATIC,25,33,34,8
+    COMBOBOX        IDC_COMBO_DATAMODE,60,30,50,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,18,50,91,190
+    CONTROL         "AllowAdd&New",IDC_CHECK_ALLOWADDNEW,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,66,74,10
+    CONTROL         "Allow&Delete",IDC_CHECK_ALLOWDELETE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,83,74,10
+    CONTROL         "Allow&Update",IDC_CHECK_ALLOWUPDATE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,100,74,10
+    CONTROL         "AllowRow&Sizing",IDC_CHECK_ALLOWROWRESIZING,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,117,74,10
+    CONTROL         "AllowColMo&ving",IDC_CHECK_ALLOWCOLMOVING,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,134,74,10
+    CONTROL         "AllowColSi&zing",IDC_CHECK_ALLOWCOLSIZING,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,151,74,10
+    CONTROL         "Gro&upHeader",IDC_CHECK_GROUPHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,168,74,10
+    CONTROL         "Column&Header",IDC_CHECK_COLUMNHEADER,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,185,74,10
+    CONTROL         "Re&cordSelectors",IDC_CHECK_SHOWRECORDSELECTORS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,202,74,10
+    CONTROL         "SelectB&yCell",IDC_CHECK_SELECTBYCELL,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,25,219,74,10
+    LTEXT           "Ca&ption",IDC_STATIC,143,33,49,8
+    EDITTEXT        IDC_EDIT_CAPTION,222,31,63,14,ES_AUTOHSCROLL
+    LTEXT           "CaptionAlign&ment",IDC_STATIC,143,54,72,8
+    COMBOBOX        IDC_COMBO_CAPTIONALIGNMENT,220,51,65,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&FieldSeparator",IDC_STATIC,143,74,65,8
+    EDITTEXT        IDC_EDIT_FIELDSEPARATOR,222,73,63,14,ES_AUTOHSCROLL
+    LTEXT           "Ro&ws",IDC_STATIC,143,94,20,13
+    EDITTEXT        IDC_EDIT_ROWS,168,91,36,15,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_ROWS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,204,95,12,12
+    LTEXT           "Co&ls",IDC_STATIC,224,94,20,13
+    EDITTEXT        IDC_EDIT_COLS,248,91,37,15,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_COLS,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,287,91,12,12
+    LTEXT           "DefColW&idth",IDC_STATIC,143,119,49,8
+    EDITTEXT        IDC_EDIT_DEFCOLWIDTH,220,116,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "HeaderHei&ght",IDC_STATIC,143,139,50,8
+    EDITTEXT        IDC_EDIT_HEADERHEIGHT,220,138,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "&RowHeight",IDC_STATIC,143,159,36,8
+    EDITTEXT        IDC_EDIT_ROWHEIGHT,220,159,65,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "DividerType",IDC_STATIC,143,199,62,8
+    COMBOBOX        IDC_COMBO_DIVIDERTYPE,220,197,65,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&BorderStyle",IDC_STATIC,143,219,62,8
+    COMBOBOX        IDC_COMBO_BORDERSTYLE,220,218,65,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "DividerStyle",IDC_STATIC,143,179,54,8
+    COMBOBOX        IDC_COMBO_DIVIDERSTYLE,220,178,65,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PROPPAGE_BHMRICHGRID_GROUP DIALOG DISCARDABLE  0, 0, 386, 236
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Add Group...",IDC_BUTTON_ADDGROUP,13,28,59,16,WS_GROUP
+    PUSHBUTTON      "&Delete Group",IDC_BUTTON_DELETEGROUP,13,55,59,16,
+                    WS_GROUP
+    PUSHBUTTON      "&Reset",IDC_BUTTON_RESET,13,84,59,16,WS_GROUP
+    LTEXT           "LevelCount:",IDC_STATIC,7,113,45,8
+    EDITTEXT        IDC_EDIT_LEVELS,57,110,25,15,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_GROUP,163,29,60,96,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "Groups:",IDC_STATIC,163,15,52,8
+    PUSHBUTTON      "ForeColor...",IDC_BUTTON_FORECOLOR,104,55,63,20
+    PUSHBUTTON      "BackColor...",IDC_BUTTON_BACKCOLOR,104,101,63,20
+    CONTROL         "AllowSizing",IDC_CHECK_ALLOWSIZING,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,182,58,60,15
+    CONTROL         "Visible",IDC_CHECK_VISIBLE,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,182,106,60,15
+    LTEXT           "Name:",IDC_STATIC,262,62,21,8
+    EDITTEXT        IDC_EDIT_NAME,298,58,50,15,ES_AUTOHSCROLL
+    LTEXT           "Width:",IDC_STATIC,262,84,25,8
+    EDITTEXT        IDC_EDIT_WIDTH,298,82,50,15,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Title:",IDC_STATIC,262,108,25,8
+    EDITTEXT        IDC_EDIT_TITLE,298,105,50,15,ES_AUTOHSCROLL
+    CONTROL         "Custom1",IDC_GRID,"BHM_GridClass",WS_TABSTOP,13,140,364,
+                    92
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX_BHMDBGRID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_BHMDBDROPDOWN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_ABOUTBOX_BHMDBCOMBO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG_ADDCOLUMN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_DIALOG_FIELDS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_DIALOG_GRIDINPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 204
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PROPPAGE_BHMRICHGRID_COLUMN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 403
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    IDD_PROPPAGE_BHMDBCOMBO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_PROPPAGE_BHMDBDROPDOWN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_PROPPAGE_BHMDBGRID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
+    END
+
+    IDD_PROPPAGE_BHMRICHGRID_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 373
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PROPPAGE_BHMRICHGRID_COLUMN DLGINIT
+BEGIN
+    IDC_COMBO_DATEMASK, 0x403, 11, 0
+0x7979, 0x7979, 0x6d2f, 0x2f6d, 0x6464, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 9, 0
+0x7979, 0x6d2f, 0x2f6d, 0x6464, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 9, 0
+0x6d6d, 0x6420, 0x2764, 0x7979, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 6, 0
+0x6d6d, 0x642f, 0x0064, 
+    IDC_COMBO_DATEMASK, 0x403, 11, 0
+0x6d6d, 0x642f, 0x2f64, 0x7979, 0x7979, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 9, 0
+0x6464, 0x6d2f, 0x2f6d, 0x7979, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 11, 0
+0x6464, 0x6d2f, 0x2f6d, 0x7979, 0x7979, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 8, 0
+0x6d6d, 0x792f, 0x7979, 0x0079, 
+    IDC_COMBO_DATEMASK, 0x403, 9, 0
+0x6d6d, 0x642f, 0x2f64, 0x7979, "\000" 
+    IDC_COMBO_DATEMASK, 0x403, 10, 0
+0x6767, 0x2f67, 0x6d6d, 0x642f, 0x0064, 
+    IDC_COMBO_DATEMASK, 0x403, 8, 0
+0x6767, 0x6767, 0x6767, 0x0067, 
+    0
+END
+
+IDD_PROPPAGE_BHMDBCOMBO DLGINIT
+BEGIN
+    IDC_COMBO_BORDERSTYLE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_BORDERSTYLE, 0x403, 11, 0
+0x6953, 0x676e, 0x656c, 0x694c, 0x656e, "\000" 
+    IDC_COMBO_DATAMODE, 0x403, 6, 0
+0x6f42, 0x6e75, 0x0064, 
+    IDC_COMBO_DATAMODE, 0x403, 8, 0
+0x6441, 0x4964, 0x6574, 0x006d, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 10, 0
+0x6f53, 0x696c, 0x6c64, 0x6e69, 0x0065, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 9, 0
+0x6144, 0x6873, 0x696c, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 4, 0
+0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 8, 0
+0x6144, 0x6873, 0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 7, 0
+0x6f44, 0x4474, 0x746f, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6556, 0x7472, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 6, 0
+0x6f48, 0x6972, 0x007a, 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f42, 0x6874, "\000" 
+    IDC_COMBO_STYLE, 0x403, 15, 0
+0x7244, 0x706f, 0x6f44, 0x6e77, 0x4320, 0x6d6f, 0x6f62, "\000" 
+    IDC_COMBO_STYLE, 0x403, 14, 0
+0x7244, 0x706f, 0x6f44, 0x6e77, 0x4c20, 0x7369, 0x0074, 
+    0
+END
+
+IDD_PROPPAGE_BHMDBDROPDOWN DLGINIT
+BEGIN
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 10, 0
+0x6f53, 0x696c, 0x6c64, 0x6e69, 0x0065, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 9, 0
+0x6144, 0x6873, 0x696c, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 4, 0
+0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 8, 0
+0x6144, 0x6873, 0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 7, 0
+0x6f44, 0x4474, 0x746f, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6556, 0x7472, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 6, 0
+0x6f48, 0x6972, 0x007a, 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f42, 0x6874, "\000" 
+    IDC_COMBO_BORDERSTYLE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_BORDERSTYLE, 0x403, 11, 0
+0x6953, 0x676e, 0x656c, 0x694c, 0x656e, "\000" 
+    IDC_COMBO_DATAMODE, 0x403, 6, 0
+0x6f42, 0x6e75, 0x0064, 
+    IDC_COMBO_DATAMODE, 0x403, 8, 0
+0x6441, 0x4964, 0x6574, 0x006d, 
+    0
+END
+
+IDD_PROPPAGE_BHMDBGRID DLGINIT
+BEGIN
+    IDC_COMBO_DATAMODE, 0x403, 6, 0
+0x6f42, 0x6e75, 0x0064, 
+    IDC_COMBO_DATAMODE, 0x403, 8, 0
+0x6441, 0x4964, 0x6574, 0x006d, 
+    IDC_COMBO_CAPTIONALIGNMENT, 0x403, 5, 0
+0x654c, 0x7466, "\000" 
+    IDC_COMBO_CAPTIONALIGNMENT, 0x403, 6, 0
+0x6952, 0x6867, 0x0074, 
+    IDC_COMBO_CAPTIONALIGNMENT, 0x403, 7, 0
+0x6543, 0x746e, 0x7265, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6556, 0x7472, "\000" 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 6, 0
+0x6f48, 0x6972, 0x007a, 
+    IDC_COMBO_DIVIDERTYPE, 0x403, 5, 0
+0x6f42, 0x6874, "\000" 
+    IDC_COMBO_BORDERSTYLE, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_COMBO_BORDERSTYLE, 0x403, 11, 0
+0x6953, 0x676e, 0x656c, 0x694c, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 10, 0
+0x6f53, 0x696c, 0x6c64, 0x6e69, 0x0065, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 9, 0
+0x6144, 0x6873, 0x696c, 0x656e, "\000" 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 4, 0
+0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 8, 0
+0x6144, 0x6873, 0x6f44, 0x0074, 
+    IDC_COMBO_DIVIDERSTYLE, 0x403, 7, 0
+0x6f44, 0x4474, 0x746f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_DRAG         CURSOR  DISCARDABLE     "res\\Dragmove.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BHMDBGRID           "BHMDBGrid Control"
+    IDS_BHMDBGRID_PPG       "BHMDBGrid General Property Page"
+    IDS_BHMDBDROPDOWN       "BHMDBDropDown Control"
+    IDS_BHMDBDROPDOWN_PPG   "BHMDBDropDown General Property Page"
+    IDS_BHMDBCOMBO          "BHMDBCombo Control"
+    IDS_BHMDBCOMBO_PPG      "BHMDBCombo General Property Page"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BHMDBGRID_PPG_CAPTION "General"
+    IDS_BHMDBDROPDOWN_PPG_CAPTION "General"
+    IDS_BHMDBCOMBO_PPG_CAPTION "General"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BHMDB_COLUMNS_PPG_CAPTION "Columns"
+    IDS_BHMDB_COLUMNS_PPG   "BHMRICHGRID Columns Property Page"
+    IDS_ERROR_NODATASOURCEINMANUALMODE "Can not set datasource in manual mode"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_UNABLETOUPDATEROW "Unable to update row"
+    IDS_ERROR_UNABLETOINSERTROW "Unable to insert row"
+    IDS_ERROR_NOSETCOLATDESIGNTIME "Can not set col at design time"
+    IDS_ERROR_NOSETROWATDESIGNTIME "Can not set row at design time"
+    IDS_ERROR_NOSETTEXTATDESIGNTIME "Can not set text at design time"
+    IDS_ERROR_NOCHANGETOMANUALMODE 
+                            "Can not change to manual mode while having datasource"
+    IDS_ERROR_NOSETCOLSINBINDMODE "Can not set cols in bind mode"
+    IDS_ERROR_NOSETROWSINBINDMODE "Can not set rows in bind mode"
+    IDS_ERROR_FIELDSEPARATOR 
+                            "Separator can only be one char, or ""(tab"", ""(space)"""
+    IDS_ERROR_NOAPPLICABLEINBINDMODE 
+                            "Method/Property is not applicable in bind mode."
+    IDS_ERROR_INVALIDWIDTHORHEIGHT "Invalid width/height value\n(max 15000)"
+    IDS_ERROR_MAX255COLS    "Cols should be 255 max"
+    IDS_BHMDB_GROUPS_PPG_CAPTION "Groups"
+    IDS_BHMDB_GROUPS_PPG    "BHMRICHGRID Groups Property Page"
+    IDS_ERROR_NAMENOTUNIQUE "Name already exists, please use a non used name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_NOROWSCOLSHAVINGCONTENT 
+                            "Can not modify rows/cols while having content"
+    IDS_AFTERINSERT         "One row was inserted"
+    IDS_AFTERUPDATE         "One row was updated"
+    IDS_BEFOREDELETE        "Are you sure to delete this row?"
+    IDS_AFTERDELETE         "On row was deleted"
+    IDS_ERROR_GENERAL       "Error occured"
+    IDS_ERROR_NOCURRENTCOLINCOLUMNPPG 
+                            "You have not selected one col to delete."
+    IDS_ERROR_INVALIDITEMSLIMITATION 
+                            "Limitation is 1 to 100, and the min value can not exceed the max value."
+    IDS_ERROR_NOBOOKMARK    "This datasource has no bookmark, grid can not work."
+    IDS_ERROR_INVALIDBOOKMARK "Invalid bookmark"
+    IDS_ERROR_INVALIDLEVELCOUNT "Level count should be 1 to 255."
+    IDS_ERROR_NOMORELEVELWITHOUTGROUP 
+                            "Can not hold more than 1 level without groups"
+    IDS_ERROR_NOCURRENTGROUP "You have not selected one group yet."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR_INVALIDLEVELCOUN "Invalid level count (should be 1 - 255)."
+    IDS_ERROR_NOAPPLICABLEINMANUALMODE 
+                            "Method/Property is not applicable in manual mode."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "BHMData.tlb"
+#include "afxctl.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

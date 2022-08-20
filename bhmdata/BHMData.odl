@@ -1,0 +1,656 @@
+// BHMData.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (BHMData.tlb) that will become a resource in
+// BHMData.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(BF91B122-6A84-11D3-A7FE-0080C8763FA4), version(1.0),
+  helpfile("BHMData.hlp"),
+  helpstring("BHMData ActiveX Control module"),
+  control ]
+library BHMDATALib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+	importlib("msdatsrc.tlb");
+
+	[ uuid(BF91B157-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IColumns;
+
+	[ uuid(BF91B154-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IColumn;
+
+	[ uuid(AD466A40-703F-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IGroups;
+
+	[ uuid(0E9D7C60-7046-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IGroup;
+
+	[ uuid(BF91B15E-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface ISelBookmarks;
+
+	//  Primary dispatch interface for CKCOMRichGridCtrl
+
+    typedef enum _DataMode{
+        DataModeBound = 0,
+        DataModeAddItem = 1
+    } Constants_DataMode;
+
+    typedef enum _Style{
+        StyleEdit = 0,
+        StyleComboBox = 1,
+		StyleComboList = 2,
+		StyleDateMask = 3, 
+        StyleCheckBox = 4,
+        StyleEditButton = 5,
+        StyleButton = 6,
+		StyleNumeric = 7
+    } Constants_Style;
+
+    typedef enum _Case{
+        CaseUnchanged = 0,
+        CaseUpper = 1,
+        CaseLower = 2
+    } Constants_Case;
+
+	typedef enum _DataType{
+		DataTypeText = 0,
+		DataTypeVARIANT_BOOL = 1,
+		DataTypeByte = 2,
+		DataTypeInteger = 3,
+		DataTypeLong = 4,
+		DataTypeSingle = 5,
+		DataTypeCurrency = 6,
+		DataTypeDate = 7
+	} Constants_DataType;
+
+    typedef enum _CaptionAlignment{
+        CaptionAlignmentLeft = 0,
+        CaptionAlignmentRight = 1,
+        CaptionAlignmentCenter = 2
+    } Constants_CaptionAlignment;
+
+    typedef enum _DividerType{
+        DividerTypeNone = 0,
+        DividerTypeVertical = 1,
+        DividerTypeHorizontal = 2,
+        DividerTypeBoth = 3
+    } Constants_DividerType;
+
+    typedef enum _DividerStyle{
+        DividerStyleSolidline = 0,
+        DividerStyleDashline = 1,
+        DividerStyleDot = 2,
+        DividerStyleDashDot = 3,
+        DividerStyleDashDotDot = 4
+    } Constants_DividerStyle;
+
+    typedef enum _ColumnCaptionAlignment{
+        ColCapAlignLeftJustify = 0,
+        ColCapAlignRightJustify = 1,
+        ColCapAlignCenter = 2,
+        ColCapAlignUseColumnAlignment = 3
+    } Constants_ColumnCaptionAlignment;
+
+    typedef enum _ComboStyle{
+        ComboStyleDropDown = 0,
+        ComboStyleDropList = 1
+    } Constants_ComboStyle;
+
+	//  Primary dispatch interface for CBHMDBGridCtrl
+
+	[ uuid(BF91B123-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Dispatch interface for BHMDBGrid Control"), hidden ]
+	dispinterface _DBHMDBGrid
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CBHMDBGridCtrl)
+			[id(DISPID_FORECOLOR), bindable, requestedit, helpstring("Determines the foreground color of an object.")] OLE_COLOR ForeColor;
+			[id(DISPID_HWND), helpstring("Returns a handle to a form or control.")] OLE_HANDLE hWnd;
+			[id(4), helpstring("Determines how the caption will be aligned.")] Constants_CaptionAlignment CaptionAlignment;
+			[id(5), helpstring("Determines the type of row divider used.")] Constants_DividerType DividerType;
+			[id(6), helpstring("Determines if new records are allowed to be added to the data grid by the user.")] VARIANT_BOOL AllowAddNew;
+			[id(7), helpstring("Determines if rows in the grid can be deleted by the user.")] VARIANT_BOOL AllowDelete;
+			[id(8), helpstring("Determines if grid data can be modified by the user.")] VARIANT_BOOL AllowUpdate;
+			[id(9), helpstring("Determines if row heights in the grid can be resized by the user.")] VARIANT_BOOL AllowRowSizing;
+			[id(10), helpstring("Determines whether record selectors will be displayed.")] VARIANT_BOOL RecordSelectors;
+			[id(11), helpstring("Determines if columns in the grid can be resized by the user or are fixed in width.")] VARIANT_BOOL AllowColumnSizing;
+			[id(12), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL ColumnHeader;
+			[id(13), helpstring("Determines The HeadFont object contains information needed to format header and caption text on a grid.")] IFontDisp* HeadFont;
+			[id(14), helpstring("Returns a Font object.")] IFontDisp* Font;
+			[id(15), helpstring("Determines the current column.")] long Col;
+			[id(16), helpstring("Determines the current display row.")] long Row;
+			[id(17), helpstring("Determines the mode used for data access.")] Constants_DataMode DataMode;
+			[id(18), helpstring("Returns the number of visible columns in the grid.")] long VisibleCols;
+			[id(19), helpstring("Returns the number of visible rows in the grid.")] long VisibleRows;
+			[id(20), helpstring("Determines the left-most column in the display area of the grid.")] long LeftCol;
+			[id(21), helpstring("Determines the number of columns in the control.")] long Cols;
+			[id(22), helpstring("Determines the number of rows in the grid.")] long Rows;
+			[id(23), helpstring("Determines the field separator used for an AddItem grid.")] BSTR FieldSeparator;
+			[id(24), helpstring("Determines the style of row divider used.")] Constants_DividerStyle DividerStyle;
+			[id(25), helpstring("Determines the first visible row.")] long FirstRow;
+			[id(26), helpstring("Determines the default width used to initially display the column.")] long DefColWidth;
+			[id(27), helpstring("Determines the height of the rows.")] long RowHeight;
+			[id(28), helpstring("Determines whether the control should be redrawn during updating.")] VARIANT_BOOL Redraw;
+			[id(29), helpstring("Determines if columns can be moved by the user, and if so, the scope of the move.")] VARIANT_BOOL AllowColumnMoving;
+			[id(30), helpstring("Determines if selection of the entire row will occur if the user clicks on a cell.")] VARIANT_BOOL SelectByCell;
+			[id(31), helpstring("Returns the columns object.")] IColumns* Columns;
+			[id(32), helpstring("Determines a value that Determines the OLE DB data provider through which the current control is bound to a database.")] DataSource* DataSource;
+			[id(33)] BSTR DataMember;
+			[id(34), helpstring("Determines if any data in row has been changed.  Setting to False performs an undo of any changes and takes the cell out of edit mode.")] VARIANT_BOOL RowChanged;
+			[id(35), helpstring("Determines the height of the header and caption")] long HeaderHeight;
+			[id(1), helpstring("Determines the column header foreground (text) color.")] OLE_COLOR HeadForeColor;
+			[id(2), helpstring("Determines the header's background color.")] OLE_COLOR HeadBackColor;
+			[id(36), helpstring("Determines the background color of an object.")] OLE_COLOR BackColor;
+			[id(DISPID_CAPTION), bindable, requestedit] BSTR Caption;
+			[id(3), bindable, requestedit, helpstring("Determines the color used to draw grid divider lines")] OLE_COLOR DividerColor;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(37), helpstring("Determines a bookmark that uniquely identifies the current record.")] VARIANT Bookmark;
+			[id(38), helpstring("Returns the selected bookmarks object.")] ISelBookmarks* SelBookmarks;
+			[id(39), helpstring("Determines the frozen content cols in the grid")] long FrozenCols;
+			[id(40), helpstring("Returns the groups object")] IGroups* Groups;
+			[id(41), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL GroupHeader;
+			//}}AFX_ODL_PROP
+			[id(255), hidden] short CtrlType;
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CBHMDBGridCtrl)
+			[id(DISPID_REFRESH), helpstring("Updates the objects in a collection to reflect the current database.")] void Refresh();
+			[id(42), helpstring("Adds a string to an AddItem grid.")] void AddItem(BSTR Item, [optional] VARIANT RowIndex);
+			[id(43), helpstring("Removes a string at the specified row from an AddItem grid.")] void RemoveItem(long RowIndex);
+			[id(44), helpstring("Scroll the grid.")] void Scroll(long Rows, long Cols);
+			[id(45), helpstring("Removes all rows from an AddItem grid.")] void RemoveAll();
+			[id(46), helpstring("Moves to the first record in the grid.")] void MoveFirst();
+			[id(47), helpstring("Moves to the previous record in the grid.")] void MovePrevious();
+			[id(48), helpstring("Moves to the next record in the grid.")] void MoveNext();
+			[id(49), helpstring("Moves to the last record in the grid.")] void MoveLast();
+			[id(50), helpstring("Moves a specified number of records in the grid.")] void MoveRecords(long Rows);
+			[id(51), helpstring("Returns whether the current row is the add row at the bottom of the grid.")] VARIANT_BOOL IsAddRow();
+			[id(52), helpstring("Updates any dirty information in the grid, applicable to all data modes.")] void Update();
+			[id(53), helpstring("Cancel current Edit Record or Add Record.")] void CancelUpdate();
+			[id(54), helpstring("In bound mode, rebinds the grid to the database.  In unbound, refreshes the grid.")] void ReBind();
+			[id(55), helpstring("Returns a bookmark of a row in the grid's display area.")] VARIANT RowBookmark(long RowIndex);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CBHMDBGridCtrl
+
+	[ uuid(BF91B124-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Event interface for BHMDBGrid Control") ]
+	dispinterface _DBHMDBGridEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CBHMDBGridCtrl)
+			[id(DISPID_KEYDOWN)] void KeyDown(short* KeyCode, short Shift);
+			[id(DISPID_KEYPRESS)] void KeyPress(short* KeyAscii);
+			[id(DISPID_CLICK)] void Click();
+			[id(DISPID_DBLCLICK)] void DblClick();
+			[id(DISPID_KEYUP)] void KeyUp(short* KeyCode, short Shift);
+			[id(DISPID_MOUSEDOWN)] void MouseDown(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEMOVE)] void MouseMove(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(DISPID_MOUSEUP)] void MouseUp(short Button, short Shift, OLE_XPOS_PIXELS x, OLE_YPOS_PIXELS y);
+			[id(1), helpstring("Fired when a user clicks on a button within a cell.")] void BtnClick();
+			[id(2), helpstring("Occurs after data is moved from a cell in the grid to the control's copy buffer.")] void AfterColUpdate(short ColIndex);
+			[id(3), helpstring("Occurs before data is moved from a cell to the control's copy buffer.")] void BeforeColUpdate(short ColIndex, BSTR OldValue, short* Cancel);
+			[id(4), helpstring("Occurs after a user attempts to insert a row, but just prior to the row actually being inserted by the control.")] void BeforeInsert(short* Cancel);
+			[id(5), helpstring("Occurs before changes a user has made are committed to the database.")] void BeforeUpdate(short* Cancel);
+			[id(6), helpstring("Occurs before a column is resized.")] void ColResize(short ColIndex, short* Cancel);
+			[id(7), helpstring("Occurs when the user has resized the rows.")] void RowResize(short* Cancel);
+			[id(8), helpstring("Occurs after the user changes the current row or column.")] void RowColChange();
+			[id(9), helpstring("Occurs before a scroll has occurred.")] void Scroll(short* Cancel);
+			[id(10), helpstring("Occurs when any data within the control is changed by the user.")] void Change();
+			[id(11), helpstring("Occurs after the user deletes a row.")] void AfterDelete(short* RtnDispErrMsg);
+			[id(12), helpstring("Occurs after a user attempts to delete a row, but just prior to the row actually being deleted by the control.")] void BeforeDelete(short* Cancel, short* DispPromptMsg);
+			[id(13), helpstring("Occurs after the user updates the current row.")] void AfterUpdate(short* RtnDispErrMsg);
+			[id(14), helpstring("Occurs after the user inserts a new row.")] void AfterInsert(short* RtnDispErrMsg);
+			[id(15), helpstring("Occurs before a column is swapped.")] void ColSwap(short FromCol, short ToCol, short* Cancel);
+			[id(16), helpstring("Occurs when an unexpected error occurs in a field when the control is updating the row.")] void UpdateError();
+			[id(17), helpstring("Occurs before the user changes the current row or column.")] void BeforeRowColChange(short* Cancel);
+			[id(18), helpstring("Occurs after a scroll has occurred.")] void ScrollAfter();
+			[id(19), helpstring("Occurs before draw the content of one cell")] void BeforeDrawCell(long Row, long Col, VARIANT* Picture, OLE_COLOR * BkColor, short* DrawText);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CBHMDBGridCtrl
+
+	[ uuid(BF91B125-6A84-11D3-A7FE-0080C8763FA4), licensed,
+	  helpstring("BHMDBGrid Control"), control ]
+	coclass BHMDBGrid
+	{
+		[default] dispinterface _DBHMDBGrid;
+		[default, source] dispinterface _DBHMDBGridEvents;
+	};
+
+	//  Primary dispatch interface for CBHMDBDropDownCtrl
+
+	[ uuid(BF91B127-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Dispatch interface for BHMDBDropDown Control"), hidden ]
+	dispinterface _DBHMDBDropDown
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CBHMDBDropDownCtrl)
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(DISPID_BORDERSTYLE), bindable, requestedit] short BorderStyle;
+			[id(6), helpstring("Returns a Font object.")] IFontDisp* Font;
+			[id(DISPID_HWND)] OLE_HANDLE hWnd;
+			[id(7), helpstring("Determines the default width used to initially display the column.")] long DefColWidth;
+			[id(8), helpstring("Determines the height of the rows.")] long RowHeight;
+			[id(9), helpstring("Determines the type of row divider used.")] Constants_DividerType DividerType;
+			[id(10), helpstring("Determines the style of row divider used.")] Constants_DividerStyle DividerStyle;
+			[id(11), helpstring("Determines the mode used for data access.")] Constants_DataMode DataMode;
+			[id(12), helpstring("Determines the left-most column in the display area of the grid.")] long LeftCol;
+			[id(13), helpstring("Determines the first visible row.")] long FirstRow;
+			[id(14), helpstring("Determines the current display row.")] long Row;
+			[id(15), helpstring("Determines the current column.")] long Col;
+			[id(16), helpstring("Determines the number of rows in the grid.")] long Rows;
+			[id(17), helpstring("Determines the number of columns in the control.")] long Cols;
+			[id(18), helpstring("For RichCombo and RichDropDown, causes the combo box to drop or close.")] VARIANT_BOOL DroppedDown;
+			[id(19), helpstring("Determines the field to display in the edit portion of the control.")] BSTR DataField;
+			[id(20), helpstring("Returns the columns object.")] IColumns* Columns;
+			[id(21), helpstring("Returns the number of visible rows in the grid.")] long VisibleRows;
+			[id(22), helpstring("Returns the number of visible columns in the grid.")] long VisibleCols;
+			[id(1), helpstring("Determines the background color of an object.")] OLE_COLOR HeadBackColor;
+			[id(2), helpstring("Determines the foreground color of an object.")] OLE_COLOR HeadForeColor;
+			[id(23), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL ColumnHeader;
+			[id(24), helpstring("The HeadFont object contains information needed to format header and caption text on a grid.")] IFontDisp* HeadFont;
+			[id(25), helpstring("Determines the height of the header and caption")] long HeaderHeight;
+			[id(26), helpstring("Determines a value that Determines the OLE DB data provider through which the current control is bound to a database.")] DataSource* DataSource;
+			[id(27)] BSTR DataMember;
+			[id(28), helpstring("Determines the field separator used for an AddItem grid.")] BSTR FieldSeparator;
+			[id(3), helpstring("Determines whether the dropdown portion of the control will automatically position itself to the row when it is dropped down to match the value in the edit portion.")] VARIANT_BOOL ListAutoPosition;
+			[id(4), helpstring("Determines whether the control should automatically size the dropdown based on the number of columns in the list.")] VARIANT_BOOL ListWidthAutoSize;
+			[id(29), helpstring("Determines the maximum number of items visible in a dropdown at once.")] short MaxDropDownItems;
+			[id(30), helpstring("Determines the minimum number of items visible in a dropdown at once.")] short MinDropDownItems;
+			[id(31), helpstring("Determines the total width of the dropdown window while do not use widthautosize feature")] short ListWidth;
+			[id(32), helpstring("Determines the background color of an object.")] OLE_COLOR BackColor;
+			[id(33), helpstring("Determines a bookmark that uniquely identifies the current record.")] VARIANT Bookmark;
+			[id(34), helpstring("Returns the groups object")] IGroups* Groups;
+			[id(5), helpstring("Determines the color used to draw grid divider lines")] OLE_COLOR DividerColor;
+			[id(35), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL GroupHeader;
+			//}}AFX_ODL_PROP
+			[id(255), hidden] short CtrlType;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CBHMDBDropDownCtrl)
+			[id(36), helpstring("Adds a string to an AddItem grid.")] void AddItem(BSTR Item, [optional] VARIANT RowIndex);
+			[id(37), helpstring("Removes a string at the specified row from an AddItem grid.")] void RemoveItem(long RowIndex);
+			[id(38), helpstring("Scroll the grid.")] void Scroll(long Rows, long Cols);
+			[id(39), helpstring("Removes all rows from an AddItem grid.")] void RemoveAll();
+			[id(40), helpstring("Moves to the first record in the grid.")] void MoveFirst();
+			[id(41), helpstring("Moves to the previous record in the grid.")] void MovePrevious();
+			[id(42), helpstring("Moves to the next record in the grid.")] void MoveNext();
+			[id(43), helpstring("Moves to the last record in the grid.")] void MoveLast();
+			[id(44), helpstring("Moves a specified number of records in the grid.")] void MoveRecords(long Rows);
+			[id(45), helpstring("In bound mode, rebinds the grid to the database.  In unbound, refreshes the grid.")] void ReBind();
+			[id(46), helpstring("Returns a bookmark of a row in the grid's display area.")] VARIANT RowBookmark(long RowIndex);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CBHMDBDropDownCtrl
+
+	[ uuid(BF91B128-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Event interface for BHMDBDropDown Control") ]
+	dispinterface _DBHMDBDropDownEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CBHMDBDropDownCtrl)
+			[id(DISPID_CLICK), helpstring("Occurs when the user presses and then releases a mouse button over an object.")] void Click();
+			[id(1), helpstring("Occurs before a scroll has occurred.")] void Scroll(short* Cancel);
+			[id(2), helpstring("Occurs when a dropdown closes up.")] void CloseUp();
+			[id(3), helpstring("Occurs when a dropdown drops down.")] void DropDown();
+			[id(4), helpstring("Occurs when the control needs to position the dropdown list to match the contents of the edit portion of RichDropDown, the cell value in the Data Grid.")] void PositionList(BSTR Text);
+			[id(5), helpstring("Occurs after a scroll has occurred.")] void ScrollAfter();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CBHMDBDropDownCtrl
+
+	[ uuid(BF91B129-6A84-11D3-A7FE-0080C8763FA4), licensed,
+	  helpstring("BHMDBDropDown Control"), control ]
+	coclass BHMDBDropDown
+	{
+		[default] dispinterface _DBHMDBDropDown;
+		[default, source] dispinterface _DBHMDBDropDownEvents;
+	};
+
+	//  Primary dispatch interface for CBHMDBComboCtrl
+
+	[ uuid(BF91B12B-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Dispatch interface for BHMDBCombo Control"), hidden ]
+	dispinterface _DBHMDBCombo
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CBHMDBComboCtrl)
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(1), helpstring("Determines the background color of an object.")] OLE_COLOR HeadBackColor;
+			[id(2), helpstring("Determines the foreground color of an object.")] OLE_COLOR HeadForeColor;
+			[id(6), helpstring("Determines the background color of an object.")] OLE_COLOR BackColor;
+			[id(7), helpstring("Determines Input Mask Format\n	#: 0 - 9;\n9: # + Space;\n?: a- z or A - Z;\nC:? + Space;\nA:# + ?;\na:ASC(32-126) or ASC(128 - 255)")] BSTR Format;
+			[id(8), helpstring("Determines the max text length when no mask")] short MaxLength;
+			[id(9), helpstring("Determines whether the user can modify the value being shown")] VARIANT_BOOL ReadOnly;
+			[id(10), helpstring("Determines a value that Determines the OLE DB data provider through which the current control is bound to a database.")] DataSource* DataSource;
+			[id(11)] BSTR DataMember;
+			[id(12), helpstring("Determines the default width used to initially display the column.")] long DefColWidth;
+			[id(13), helpstring("Determines the height of the rows.")] long RowHeight;
+			[id(14), helpstring("Determines the type of row divider used.")] Constants_DividerType DividerType;
+			[id(15), helpstring("Determines the style of row divider used.")] Constants_DividerStyle DividerStyle;
+			[id(16), helpstring("Determines the mode used for data access.")] Constants_DataMode DataMode;
+			[id(17), helpstring("Determines the left-most column in the display area of the grid.")] long LeftCol;
+			[id(18), helpstring("Determines the first visible row.")] long FirstRow;
+			[id(19), helpstring("Determines the current display row.")] long Row;
+			[id(20), helpstring("Determines the current column.")] long Col;
+			[id(21), helpstring("Determines the number of rows in the grid.")] long Rows;
+			[id(22), helpstring("Determines the number of columns in the control.")] long Cols;
+			[id(23), helpstring("For RichCombo and RichDropDown, causes the combo box to drop or close.")] VARIANT_BOOL DroppedDown;
+			[id(24), helpstring("Determines the field to display in the edit portion of the control.")] BSTR DataField;
+			[id(25), helpstring("Returns the columns object.")] IColumns* Columns;
+			[id(26), helpstring("Returns the number of visible rows in the grid.")] long VisibleRows;
+			[id(27), helpstring("Returns the number of visible columns in the grid.")] long VisibleCols;
+			[id(28), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL ColumnHeader;
+			[id(29), helpstring("Determines the font object contains information needed to format the text in the edit part.")] IFontDisp* Font;
+			[id(30), helpstring("Determines the information needed to format header and caption text on a grid.")] IFontDisp* HeadFont;
+			[id(31), helpstring("Determines the field separator used for an AddItem grid.")] BSTR FieldSeparator;
+			[id(3), helpstring("Determines whether the dropdown portion of the control will automatically position itself to the row when it is dropped down to match the value in the edit portion.")] VARIANT_BOOL ListAutoPosition;
+			[id(4), helpstring("Determines whether the control should automatically size the dropdown based on the number of columns in the list.")] VARIANT_BOOL ListWidthAutoSize;
+			[id(32), helpstring("Determines the maximum number of items visible in a dropdown at once.")] short MaxDropDownItems;
+			[id(33), helpstring("Determines the minimum number of items visible in a dropdown at once.")] short MinDropDownItems;
+			[id(34), helpstring("Determines the total width of the dropdown window while do not use widthautosize feature")] short ListWidth;
+			[id(35), helpstring("Determines the height of the header and caption")] long HeaderHeight;
+			[id(36), helpstring("Determines the text being shown")] BSTR Text;
+			[id(37), helpstring("Determines a bookmark that uniquely identifies the current record.")] VARIANT Bookmark;
+			[id(38), helpstring("Determines the style of the combobox")] Constants_ComboStyle Style;
+			[id(0)] BSTR _Text;
+			[id(39), helpstring("Returns the groups object")] IGroups* Groups;
+			[id(5), helpstring("Determines the color used to draw grid divider lines")] OLE_COLOR DividerColor;
+			[id(40), helpstring("Determines if the column header row will be visible")] VARIANT_BOOL GroupHeader;
+			//}}AFX_ODL_PROP
+			[id(255), hidden] short CtrlType;
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CBHMDBComboCtrl)
+			[id(41), helpstring("Adds a string to an AddItem grid.")] void AddItem(BSTR Item, [optional] VARIANT RowIndex);
+			[id(42), helpstring("Removes a string at the specified row from an AddItem grid.")] void RemoveItem(long RowIndex);
+			[id(43), helpstring("Scroll the grid.")] void Scroll(long Rows, long Cols);
+			[id(44), helpstring("Removes all rows from an AddItem grid.")] void RemoveAll();
+			[id(45), helpstring("Moves to the first record in the grid.")] void MoveFirst();
+			[id(46), helpstring("Moves to the previous record in the grid.")] void MovePrevious();
+			[id(47), helpstring("Moves to the next record in the grid.")] void MoveNext();
+			[id(48), helpstring("Moves to the last record in the grid.")] void MoveLast();
+			[id(49), helpstring("Moves a specified number of records in the grid.")] void MoveRecords(long Rows);
+			[id(50), helpstring("In bound mode, rebinds the grid to the database.  In unbound, refreshes the grid.")] void ReBind();
+			[id(51), helpstring("Returns whether the current text in the edit portion of the combo or cell of the grid is in the dropdown list.")] VARIANT_BOOL IsItemInList();
+			[id(52), helpstring("Returns a bookmark of a row in the grid's display area.")] VARIANT RowBookmark(long RowIndex);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  Event dispatch interface for CBHMDBComboCtrl
+
+	[ uuid(BF91B12C-6A84-11D3-A7FE-0080C8763FA4),
+	  helpstring("Event interface for BHMDBCombo Control") ]
+	dispinterface _DBHMDBComboEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CBHMDBComboCtrl)
+			[id(DISPID_CLICK), helpstring("Occurs when the user presses and then releases a mouse button over an object.")] void Click();
+			[id(DISPID_KEYDOWN)] void KeyDown(short* KeyCode, short Shift);
+			[id(DISPID_KEYPRESS)] void KeyPress(short* KeyAscii);
+			[id(DISPID_KEYUP)] void KeyUp(short* KeyCode, short Shift);
+			[id(1), helpstring("Occurs before a scroll has occurred.")] void Scroll(short* Cancel);
+			[id(2), helpstring("Occurs after a scroll has occurred.")] void ScrollAfter();
+			[id(3), helpstring("Occurs when a dropdown closes up.")] void CloseUp();
+			[id(4), helpstring("Occurs when a dropdown drops down.")] void DropDown();
+			[id(5), helpstring("Occurs when the control needs to position the dropdown list to match the contents of the edit portion of RichDropDown, the cell value in the Data Grid.")] void PositionList(BSTR Text);
+			[id(6), helpstring("Occurs when any data within the control is changed by the user.")] void Change();
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CBHMDBComboCtrl
+
+	[ uuid(BF91B12D-6A84-11D3-A7FE-0080C8763FA4), licensed,
+	  helpstring("BHMDBCombo Control"), control ]
+	coclass BHMDBCombo
+	{
+		[default] dispinterface _DBHMDBCombo;
+		[default, source] dispinterface _DBHMDBComboEvents;
+	};
+
+
+	//  Primary dispatch interface for CColumn
+	
+	[ uuid(BF91B154-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IColumn
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColumn)
+			[id(1), helpstring("Determines the maximum column field length for editing.")] short FieldLen;
+			[id(2), helpstring("Determines if the specified object can be resized by the user.")] VARIANT_BOOL AllowSizing;
+			[id(3), helpstring("Determines the column header foreground (text) color.")] OLE_COLOR HeadForeColor;
+			[id(4), helpstring("Determines the header's background color.")] OLE_COLOR HeadBackColor;
+			[id(5), helpstring("Determines a field to bind to in the current database.")] BSTR DataField;
+			[id(6), helpstring("Determines whether the column is locked from user-input.")] VARIANT_BOOL Locked;
+			[id(7), helpstring("Determines a value indicating whether an object is visible or hidden.")] VARIANT_BOOL Visible;
+			[id(8), helpstring("Determines the width of an object.")] long Width;
+			[id(9), helpstring("Returns the column underlying data type.")] Constants_DataType DataType;
+			[id(10), helpstring("Determines whether an object is selected.")] VARIANT_BOOL Selected;
+			[id(11), helpstring("Determines the column's control style.")] Constants_Style Style;
+			[id(12), helpstring("Determines how the caption will be aligned on the object/control.")] Constants_ColumnCaptionAlignment CaptionAlignment;
+			[id(13), helpstring("Returns whether the field in that column for the current row has been modified.")] VARIANT_BOOL ColChanged;
+			[id(14), helpstring("Determines the column's unique name.")] BSTR Name;
+			[id(15), helpstring("Determines how null or empty column data is written back to the database.")] VARIANT_BOOL Nullable;
+			[id(16), helpstring("Determines a value that determines the input mask for the object.")] BSTR Mask;
+			[id(17), helpstring("Determines a value that determines the prompt character used during masked input.")] BSTR PromptChar;
+			[id(18), helpstring("Determines the caption for the selected object.")] BSTR Caption;
+			[id(19), helpstring("Determines how the caption will be aligned on the object/control.")] Constants_CaptionAlignment Alignment;
+			[id(20), helpstring("Determines the foreground color used to display text and graphics in an object.")] OLE_COLOR ForeColor;
+			[id(21), helpstring("Determines the background color of an object.")] OLE_COLOR BackColor;
+			[id(22), helpstring("Determines the case to use for column text.")] Constants_Case Case;
+			[id(23), helpstring("Determines the text string associated with the specified column.")] BSTR Text;
+			[id(24), helpstring("Returns the value stored in a column.")] VARIANT Value;
+			[id(0)] BSTR _Text;
+			[id(25), helpstring("Determines whether literal characters are included in the object's Text property.")] VARIANT_BOOL PromptInclude;
+			[id(26), helpstring("Returns the number of items in the list portion of a control.")] short ListCount;
+			[id(27), helpstring("Determines the selected index in a combo box of a column with a combo box style.")] short ListIndex;
+			[id(28), helpstring("Returns the HWnd handle of the external dropdown control")] OLE_HANDLE DropDownHWnd;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColumn)
+			[id(29), helpstring("Returns the text for a specified row in the grid.")] BSTR CellText(VARIANT Bookmark);
+			[id(30), helpstring("Returns the underlying data for a specified row in the grid.")] VARIANT CellValue(VARIANT Bookmark);
+			[id(31), helpstring("Determines if the current cell is valid.")] VARIANT_BOOL IsCellValid();
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CColumn
+
+	[ uuid(BF91B156-6A84-11D3-A7FE-0080C8763FA4) ]
+	coclass Column
+	{
+		[default] dispinterface IColumn;
+	};
+
+
+	//  Primary dispatch interface for CColumns
+	
+	[ uuid(BF91B157-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IColumns
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CColumns)
+			[id(1), helpstring("Returns the number of objects in the collection.")] short Count;
+			//}}AFX_ODL_PROP
+            [id(DISPID_NEWENUM), restricted] IUnknown* _NewEnum;
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CColumns)
+			[id(2), helpstring("Used to remove a specified object from a collection.")] void Remove(VARIANT ColIndex);
+			[id(3), helpstring("Adds objects to a collection.")] void Add(VARIANT ColIndex);
+			[id(4), helpstring("Removes all objects from a collection.")] void RemoveAll();
+			[id(5), propget] IColumn * Item(VARIANT ColIndex);
+			[id(0), propget] IColumn * _Item(VARIANT ColIndex);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CColumns
+
+	[ uuid(BF91B159-6A84-11D3-A7FE-0080C8763FA4) ]
+	coclass Columns
+	{
+		[default] dispinterface IColumns;
+	};
+
+
+	//  Primary dispatch interface for CSelBookmarks
+	
+	[ uuid(BF91B15E-6A84-11D3-A7FE-0080C8763FA4) ]
+	dispinterface ISelBookmarks
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSelBookmarks)
+			[id(1), helpstring("Returns the number of objects in the collection.")] long Count;
+			//}}AFX_ODL_PROP
+            [id(DISPID_NEWENUM), restricted] IUnknown* _NewEnum;
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSelBookmarks)
+			[id(2), helpstring("Used to remove a specified object from a collection.")] void Remove(long Index);
+			[id(3), helpstring("Adds objects to a collection.")] void Add(VARIANT Bookmark);
+			[id(4), helpstring("Removes all objects from a collection.")] void RemoveAll();
+			[id(5), propget] VARIANT Item(long Index);
+			[id(0), propget] VARIANT _Item(long Index);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CSelBookmarks
+
+	[ uuid(BF91B160-6A84-11D3-A7FE-0080C8763FA4) ]
+	coclass SelBookmarks
+	{
+		[default] dispinterface ISelBookmarks;
+	};
+
+
+	//  Primary dispatch interface for CGroups
+	
+	[ uuid(AD466A40-703F-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IGroups
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGroups)
+			[id(1)] short Count;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGroups)
+			[id(2)] void Remove(VARIANT GroupIndex);
+			[id(3)] void Add(VARIANT GroupIndex);
+			[id(4)] void RemoveAll();
+			[id(5), propget] IGroup* Item(VARIANT GroupIndex);
+			[id(0), propget] IGroup* _Item(VARIANT GroupIndex);
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGroups
+
+	[ uuid(AD466A42-703F-11D3-A7FE-0080C8763FA4) ]
+	coclass Groups
+	{
+		[default] dispinterface IGroups;
+	};
+
+
+	//  Primary dispatch interface for CGroup
+	
+	[ uuid(0E9D7C60-7046-11D3-A7FE-0080C8763FA4) ]
+	dispinterface IGroup
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CGroup)
+			[id(1), helpstring("Determines the group header's background color.")] OLE_COLOR BackColor;
+			[id(2), helpstring("Determines the header's text color.")] OLE_COLOR ForeColor;
+			[id(3), helpstring("Determines the group's unique name.")] BSTR Name;
+			[id(4), helpstring("Determines the caption of the group")] BSTR Caption;
+			[id(5), helpstring("Determines the width of the group.")] long Width;
+			[id(6), helpstring("Determines if the group will be visible")] VARIANT_BOOL Visible;
+			[id(7), helpstring("Determines if the width of specified object can be resized by the user.")] VARIANT_BOOL AllowSizing;
+			[id(8), helpstring("Returns the columns object.")] IColumns* Columns;
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CGroup)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CGroup
+
+	[ uuid(0E9D7C62-7046-11D3-A7FE-0080C8763FA4) ]
+	coclass Group
+	{
+		[default] dispinterface IGroup;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
